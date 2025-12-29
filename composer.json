@@ -1,0 +1,29 @@
+{
+    "name": "cofa/design_patterns_with_old_fashion",
+    "description": "How to detect that this case needs this design pattern",
+    "type": "project",
+    "require": {
+        "php": "^8.4",
+        "phpunit/phpunit": "^12.5"
+    },
+    "require-dev": {
+        "vimeo/psalm": "^6.14"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Cofa\\DesignPatternsWithOldFashion\\": "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "Tests\\": "tests/"
+
+    },
+    "authors": [
+        {
+            "name": "Mahmoud Gamal",
+            "email": "112869567+Cofa12@users.noreply.github.com"
+        }
+    ]
+}

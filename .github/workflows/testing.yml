@@ -1,0 +1,24 @@
+name: Check Project Tests
+on:
+  push:
+    branches:
+      - main
+      - development
+  pull_request:
+    branches:
+      - main
+      - development
+
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4.2.2
+
+      - name: composer installation
+        run: composer install --prefer-dist --no-scripts --no-progress --no-interaction
+
+      - name: run tests
+        run: php artisan test --env=testing
