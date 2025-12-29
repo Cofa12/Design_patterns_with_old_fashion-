@@ -1,24 +1,28 @@
-name: Check Project Tests
+name: Run PHPUnit Tests
+
 on:
   push:
-    branches:
-      - main
-      - development
+    branches: [ main, master ]
   pull_request:
-    branches:
-      - main
-      - development
-
+    branches: [ main, master ]
 
 jobs:
-  test:
+  phpunit:
     runs-on: ubuntu-latest
+
     steps:
-      - name: checkout
-        uses: actions/checkout@v4.2.2
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: composer installation
-        run: composer install --prefer-dist --no-scripts --no-progress --no-interaction
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: mbstring, xml, ctype, iconv, intl
+          coverage: xdebug
 
-      - name: run tests
-        run: php artisan test --env=testing
+      - name: Install Dependencies
+        run: composer install --prefer-dist --no-progress
+
+      - name: Run Tests
+        run: vendor/bin/phpunit
