@@ -1,28 +1,28 @@
-name: Run PHPUnit Tests
-
-on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
-
+name: CI
+on: [ push, pull_request ]
 jobs:
-  phpunit:
+  ci:
+    name: "CI"
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      # --------- Setup steps ---------
+      - name: "Checkout"
+        uses: actions/checkout@v3
 
-      - name: Setup PHP
+      - name: "Setup PHP"
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.4'
-          extensions: mbstring, xml, ctype, iconv, intl
-          coverage: xdebug
+          coverage: "pcov"
+          php-version: "8.4"
+          ini-values: memory_limit=-1
+          extensions: pcov, xdebug, sodium, fileinfo
 
-      - name: Install Dependencies
-        run: composer install --prefer-dist --no-progress
+      - name: "Install dependencies"
+        uses: ramsey/composer-install@v2
 
-      - name: Run Tests
-        run: vendor/bin/phpunit
+      # --------- Run steps ---------
+      - name: "Unit Tests"
+        run: "composer test"
+
+      - name: "Static code analysis"
+        run: "composer psalm"
