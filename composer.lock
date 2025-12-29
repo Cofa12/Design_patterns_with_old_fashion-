@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "content-hash": "bdcfd10ff7d7231dd37b000ba98e3cc9",
+
     "packages": [
         {
             "name": "myclabs/deep-copy",
