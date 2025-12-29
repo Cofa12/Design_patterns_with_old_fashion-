@@ -20,6 +20,12 @@
         "Tests\\": "tests/"
 
     },
+
+    "scripts": {
+        "test": "vendor/bin/phpunit --testdox",
+        "psalm": "psalm --no-cache"
+    },
+
     "authors": [
         {
             "name": "Mahmoud Gamal",
