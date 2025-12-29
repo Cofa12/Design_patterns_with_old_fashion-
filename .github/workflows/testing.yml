@@ -22,7 +22,7 @@ jobs:
 
       # --------- Run steps ---------
       - name: "Unit Tests"
-        run: "composer test"
+        run: "vendor/bin/phpunit"
 
       - name: "Static code analysis"
-        run: "composer psalm"
+        run: "vendor/bin/psalm"
