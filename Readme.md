@@ -1,5 +1,18 @@
 # Design Patterns with PHP
 
+## 📋 Requirements
+
+Before using this project, ensure you have the following installed:
+- PHP 8.4 or higher
+- Composer
+
+## 🔧 Installation
+
+**First, install the project dependencies:**
+```bash
+composer install
+```
+
 ## 📚 Documentation
 
 This repository contains complete examples of **Design Patterns** implementations, demonstrating how to solve common object-oriented design problems.
@@ -32,11 +45,12 @@ Each design pattern directory contains documentation to help you understand the 
 
 ## 🚀 How to Use This Repository
 
-1. Navigate to the design pattern you want to learn
-2. Read the `problem.md` file to understand the problems
-3. Read the `solution.md` file to see how the pattern solves them
-4. Compare the code in `WithoutDesignPattern` and `WithDesignPattern` directories
-5. Run the tests to see the patterns in action
+1. **Install dependencies** (see Installation section above)
+2. Navigate to the design pattern you want to learn
+3. Read the `problem.md` file to understand the problems
+4. Read the `solution.md` file to see how the pattern solves them
+5. Compare the code in `WithoutDesignPattern` and `WithDesignPattern` directories
+6. Run the tests to see the patterns in action
 
 ## 📝 Pattern Structure
 
