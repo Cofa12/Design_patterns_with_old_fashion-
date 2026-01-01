@@ -23,12 +23,6 @@ final class FirstVisitor implements Visitor
         return $channel->isThereNewVideo();
     }
 
-    #[Override]
-    public function watchNewVideo(Video $video): bool
-    {
-        return true;
-    }
-
     public function getName(): string
     {
         return $this->name;
