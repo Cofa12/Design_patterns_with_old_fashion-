@@ -27,7 +27,8 @@ Each design pattern directory contains documentation to help you understand the 
 ## 🗂️ Available Patterns
 
 ### Behavioral Patterns
-- **Strategy Pattern** - Encapsulates algorithms and makes them interchangeable
+- **Strategy Pattern** 
+- **Observer Pattern**
 
 ### Creational Patterns
 - Coming soon...
